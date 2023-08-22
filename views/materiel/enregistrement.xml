@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_materiel_create" model="ir.actions.act_window">
+        <field name="name">Matériels</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">materiel</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_enregistrement_materiel_root" name="Enregistrement matériel" action="action_materiel_create" parent="menu_materiel_root" sequence="10"/>
+
+    <record id="model_materiel_form" model="ir.ui.view">
+        <field name="name">materiel.form</field>
+        <field name="model">materiel</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="num_serie" readonly='1' />
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="name" />
+                        <field name="quantity" />
+                        <field name="available_quantity" />
+                        <field name="categorie_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="model_materiel_tree" model="ir.ui.view">
+        <field name="name">materiel.tree</field>
+        <field name="model">materiel</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="num_serie" />
+                <field name="name" />
+                <field name="quantity" />
+                <field name="available_quantity" />
+                <field name="categorie_id" />
+                <button name="action_materiel_allouer" string="Allouer" type="object" class="btn-success" />
+                <button name="action_materiel_delete" string="Supprimer" type="object" class="btn-danger" confirm="Voulez-vous vraiment supprimer ce matériel ?" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_materiel_search" model="ir.ui.view">
+        <field name="name">materiel.search</field>
+        <field name="model">materiel</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="['|', ('name', 'ilike', self), ('num_serie', 'ilike', self)]" />
+                <field name="categorie_id" />
+            </search>
+        </field>
+    </record>
+
+</odoo>

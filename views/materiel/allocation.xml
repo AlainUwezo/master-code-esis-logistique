@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_allocation_materiel" model="ir.actions.act_window">
+        <field name="name">Allocations</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">materiel.allocation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_allouer_materiel_root" name="Allouer matériel" action="action_allocation_materiel" parent="menu_materiel_root" sequence="10"/>
+
+    <record id="model_allocation_form" model="ir.ui.view">
+        <field name="name">materiel.allocation.form</field>
+        <field name="model">materiel.allocation</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="motif" />
+                        <field name="quantity" />
+                        <field name="materiel_id" />
+                        <field name="is_available" />
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="message_ids" option="{'post_refresh': 'recipients'}" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="model_allocation_tree" model="ir.ui.view">
+        <field name="name">materiel.allocation.tree</field>
+        <field name="model">materiel.allocation</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="motif" />
+                <field name="quantity" />
+                <field name="materiel_id" />
+                <button name="action_allocation_delete" string="Supprimer" type="object" class="btn-danger" confirm="Voulez-vous vraiment supprimer ce matériel ?" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

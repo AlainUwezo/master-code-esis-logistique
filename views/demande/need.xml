@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_need" model="ir.actions.act_window">
+        <field name="name">Etats de besoin</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">needs</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_need_root" name="Etat de besoin" action="action_need" parent="menu_demandes_root" sequence="10"/>
+
+    <record id="model_need_form" model="ir.ui.view">
+        <field name="name">needs.form</field>
+        <field name="model">needs</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="reference" readonly='1' />
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="need_object" />
+                        <field name="imputation" />
+                        <field name="description" />
+                        <field name="quantity" />
+                        <field name="unit_price" />
+                        <field name="total_price" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="model_need_tree" model="ir.ui.view">
+        <field name="name">needs.tree</field>
+        <field name="model">needs</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="reference" />
+                <field name="need_object" />
+                <field name="imputation" />
+                <field name="description" />
+                <field name="quantity" />
+                <field name="unit_price" />
+                <field name="total_price" />
+                <button name="action_need_delete" string="Supprimer" type="object" class="btn-danger" confirm="Voulez-vous vraiment supprimer ce matériel ?" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_logistic_root" name="Esis Logistique" sequence="10"/>
+
+    <menuitem id="menu_materiel_root" name="Gérer Matériel" parent="menu_logistic_root" sequence="10"/>
+
+    <menuitem id="menu_demandes_root" name="Gérer Demandes" parent="menu_logistic_root" sequence="10"/>
+
+    <menuitem id="menu_rapport_root" name="Gérer Rapport" parent="menu_logistic_root" sequence="10"/>
+
+    <menuitem id="menu_validation_demandes_root" name="Valider Demandes" parent="menu_logistic_root" sequence="10"/>
+
+</odoo>

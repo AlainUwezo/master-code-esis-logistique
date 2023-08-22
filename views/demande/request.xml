@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_request" model="ir.actions.act_window">
+        <field name="name">Requête</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">request</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_request_root" name="Requête" action="action_request" parent="menu_demandes_root" sequence="10"/>
+
+    <record id="model_request_form" model="ir.ui.view">
+        <field name="name">request.form</field>
+        <field name="model">request</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="need_ids" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="model_request_tree" model="ir.ui.view">
+        <field name="name">request.tree</field>
+        <field name="model">request</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="need_ids" />
+                <field name="state_request" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

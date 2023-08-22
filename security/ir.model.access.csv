@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+Esis.access_materiel_allocation,access_materiel_allocation,Esis.model_materiel_allocation,base.group_user,1,1,1,1
+Esis.access_materiel_categorie,access_materiel_categorie,Esis.model_materiel_categorie,base.group_user,1,1,1,1
+Esis.access_consumable,access_consumable,Esis.model_consumable,base.group_user,1,1,1,1
+Esis.access_delivery,access_delivery,Esis.model_delivery,base.group_user,1,1,1,1
+Esis.access_materiel,access_materiel,Esis.model_materiel,base.group_user,1,1,1,1
+Esis.access_needs,access_needs,Esis.model_needs,base.group_user,1,1,1,1
+Esis.access_materiel_registration,access_materiel_registration,Esis.model_materiel_registration,base.group_user,1,1,1,1
+Esis.access_request,access_request,Esis.model_request,base.group_user,1,1,1,1
+Esis.access_stock,access_stock,Esis.model_stock,base.group_user,1,1,1,1
+Esis.access_user,access_user,Esis.model_user,base.group_user,1,1,1,1

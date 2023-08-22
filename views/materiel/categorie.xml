@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_categorie" model="ir.actions.act_window">
+        <field name="name">Catégories</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">materiel.categorie</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_categorie_root" name="Catégorie" action="action_categorie" parent="menu_materiel_root" sequence="10"/>
+
+    <record id="model_categorie_form" model="ir.ui.view">
+        <field name="name">materiel.categorie.form</field>
+        <field name="model">materiel.categorie</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="designation" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="model_categorie_tree" model="ir.ui.view">
+        <field name="name">materiel.categorie.tree</field>
+        <field name="model">materiel.categorie</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="designation" />
+                <button name="action_categorie_delete" string="Supprimer" type="object" class="btn-danger" confirm="Voulez-vous vraiment supprimer ce matériel ?" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

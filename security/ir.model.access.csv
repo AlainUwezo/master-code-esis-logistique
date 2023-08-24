@@ -1,6 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 Esis.access_materiel_allocation,access_materiel_allocation,Esis.model_materiel_allocation,base.group_user,1,1,1,1
 Esis.access_materiel_categorie,access_materiel_categorie,Esis.model_materiel_categorie,base.group_user,1,1,1,1
+Esis.access_materiel_modifier,access_materiel_modifier,Esis.model_materiel_modifier,base.group_user,1,1,1,1
 Esis.access_consumable,access_consumable,Esis.model_consumable,base.group_user,1,1,1,1
 Esis.access_delivery,access_delivery,Esis.model_delivery,base.group_user,1,1,1,1
 Esis.access_materiel,access_materiel,Esis.model_materiel,base.group_user,1,1,1,1

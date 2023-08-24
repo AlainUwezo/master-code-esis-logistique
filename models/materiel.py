@@ -3,7 +3,7 @@ from odoo.exceptions import ValidationError
 
 class Materiel(models.Model) :
     _name = 'materiel'
-    _description = 'Mateiriel'
+    _description = 'Materiel'
 
     materiel_id = fields.Many2one('materiel', string='Matériel')
     num_serie = fields.Char(string='Numéro de série')
@@ -14,12 +14,12 @@ class Materiel(models.Model) :
 
     @api.constrains('quantity', 'name')
     def check_before_create(self) :
-        for rec in self :
-            if len(rec.name) < 5 :
+        for val in self :
+            if len(val.name) < 3 :
                 raise ValidationError("Veuillez entrez un nom d'au moins 5 caractères")
-            if rec.quantity <= 0 :
+            if val.quantity <= 0 :
                 raise ValidationError("Veuillez entrer une quantité valide")
-
+    
     @api.onchange('quantity')
     def onchange_quantity(self) :
         self.available_quantity = self.quantity
@@ -29,6 +29,16 @@ class Materiel(models.Model) :
             'type': 'ir.actions.act_window',
             'name': 'Allouer matériel',
             'res_model': 'materiel.allocation',
+            'view_mode': 'form',
+            'context': {'default_materiel_id': self._origin.id},
+            'target': 'new'
+        }
+
+    def action_materiel_modifier(self) :
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Modifier matériel',
+            'res_model': 'materiel.modifier',
             'view_mode': 'form',
             'context': {'default_materiel_id': self._origin.id},
             'target': 'new'

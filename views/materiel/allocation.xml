@@ -39,7 +39,7 @@
                 <field name="motif" />
                 <field name="quantity" />
                 <field name="materiel_id" />
-                <button name="action_allocation_delete" string="Supprimer" type="object" class="btn-danger" confirm="Voulez-vous vraiment supprimer ce matériel ?" />
+                <button name="action_allocation_remettre" string="Remettre" type="object" class="btn-success" confirm="Voulez-vous remettre ce matériel ?" />
             </tree>
         </field>
     </record>

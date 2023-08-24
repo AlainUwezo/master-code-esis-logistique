@@ -8,3 +8,4 @@ from . import registration
 from . import request
 from . import stock
 from . import user
+from . import materiel_modif

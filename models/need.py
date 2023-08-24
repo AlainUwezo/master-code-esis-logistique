@@ -12,6 +12,7 @@ class Need(models.Model) :
     quantity = fields.Integer(string='Quantité', required=True)
     unit_price = fields.Float(string='Prix unitaire', required=True, tracking=True)
     total_price = fields.Float(string='Prix total', readonly=True, tracking=True)
+    state_request = fields.Boolean(string='Validé')
 
     @api.constrains('need_object', 'quantity', 'unit_price')
     def check_before_create(self) :

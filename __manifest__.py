@@ -3,7 +3,7 @@
     "author": "Master Code",
     'application': True,
     "summary": "Réalisé dans le cadre de Hackaton",
-    'depends': ['mail'],
+    'depends': ['mail', 'web'],
     "data": [
         'security/ir.model.access.csv',
         'data/sequence.xml',
@@ -13,5 +13,13 @@
         'views/materiel/categorie.xml',
         'views/demande/need.xml',
         'views/demande/request.xml',
-    ]
+        'views/materiel/modifier-materiel.xml',
+    ],
+    'qweb': [
+        'view/*.xml',
+    ],
+    'auto_install': False,
+    'installable': True,
+    'post_init_hook': 'post_init_hook',
+    'css': ['static/src/css/style.css'],
 }

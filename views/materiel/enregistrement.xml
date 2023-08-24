@@ -42,21 +42,12 @@
                 <field name="quantity" />
                 <field name="available_quantity" />
                 <field name="categorie_id" />
+                <button name="action_materiel_modifier" string="Modifier" type="object" class="btn-primary" />
                 <button name="action_materiel_allouer" string="Allouer" type="object" class="btn-success" />
                 <button name="action_materiel_delete" string="Supprimer" type="object" class="btn-danger" confirm="Voulez-vous vraiment supprimer ce matériel ?" />
             </tree>
         </field>
     </record>
 
-    <record id="view_materiel_search" model="ir.ui.view">
-        <field name="name">materiel.search</field>
-        <field name="model">materiel</field>
-        <field name="arch" type="xml">
-            <search>
-                <field name="name" filter_domain="['|', ('name', 'ilike', self), ('num_serie', 'ilike', self)]" />
-                <field name="categorie_id" />
-            </search>
-        </field>
-    </record>
 
 </odoo>
